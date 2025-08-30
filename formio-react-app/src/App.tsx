@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { FormBuilder } from '@formio/react'
+import { FormBuilder, FormType } from '@formio/react'
 import './App.css'
 
 function App() {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormType>({
     display: 'wizard',
     components: []
   })
@@ -35,7 +35,7 @@ function App() {
           Save Form
         </button>
       </div>
-      <div style={{ border: '1px solid #ddd', borderRadius: '4px', padding: '10px' }}>
+      <div>
         <FormBuilder
           initialForm={form}
           onChange={handleFormChange}
